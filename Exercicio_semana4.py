@@ -19,8 +19,6 @@ consumo_inicial = dados_portugal["1990 [YR1990]"].values[0]
 consumo_final = dados_portugal["2000 [YR2000]"].values[0]
 variacao = calcular_variação_percentual(consumo_inicial, consumo_final)
 
-print(f'A Variação percentual no consumo de energia elétrica em Portugal entre 1990 e 2000 foi de: {variacao:.2f}%')
-
 #Gráfico de Barras
 
 import matplotlib.pyplot as plt
@@ -29,6 +27,8 @@ categorias = ["Ano 1990", "Ano 2000"]
 valores = [consumo_inicial,consumo_final]
 
 plt.bar(categorias, valores, color="blue")
-plt.ylabel("Consumo em kWh")
-plt.title("Variação de consumo de energia elétrica em Portugal entre 1990 e 2000\n")
+plt.xlabel("País em análise: Portugal")
+plt.ylabel("Consumo de energia [kWh]")
+titulo = f"Variação de consumo de energia elétrica em Portugal entre 1990 e 2000.\n Variação percentual no consumo entre 1990 e 2000 foi de {variacao:.2f}%"
+plt.title(titulo)
 plt.show()
